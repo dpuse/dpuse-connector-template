@@ -16,6 +16,11 @@ logs
 *.log
 npm-debug.log*
 
+# Rust
+rust/*/pkg
+rust/*/target
+rust/target
+
 # Testing
 __screenshots__/
 test-results/

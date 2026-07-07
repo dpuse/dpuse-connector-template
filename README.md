@@ -1,4 +1,4 @@
-# DPUse Connector Template Connector
+# DPUse Connector Template
 
 <!-- OPENING_START -->
 
@@ -24,7 +24,26 @@ Template scaffold for building new DPUse connectors. Replace this description, a
 
 <!-- CONNECTOR_ACTIONS_START -->
 
-Run `npm run documentActions` after implementation to populate this table from config.json's actionNames.
+Connectors conform to a unified interface contract by implementing a specific subset of standard actions. These standardised actions allow the DPUse application to interact with any underlying data source in the same way, enabling Connectors to be built independently and loaded dynamically at runtime.
+
+This connector is a Source connector that supports only read actions. Connectors can also function as a Destination (write-only) or Bidirectional (read/write), depending on the actions they support. The table below lists all connector actions and highlights those supported by this connector.
+
+|Action|Supported|
+|:----|:-------:|
+| Abort Operation | ✓ |
+| Audit Object Content | ✓ |
+| Create Object |  |
+| Describe Connection |  |
+| Drop Object |  |
+| Find Object | ✓ |
+| Get Readable Stream | ✓ |
+| Get Record |  |
+| List Nodes | ✓ |
+| Preview Object | ✓ |
+| Remove Records |  |
+| Retrieve Chunks |  |
+| Retrieve Records | ✓ |
+| Upsert Records |  |
 
 <!-- CONNECTOR_ACTIONS_END -->
 
@@ -42,7 +61,7 @@ cd dpuse-connector-template
 npm install
 ```
 
-_Requires [Node.js](https://nodejs.org/) 22 or later, [npm](https://www.npmjs.com/) 11 or later, and [TypeScript](https://www.typescriptlang.org/) 6 or later._
+_Requires [Node.js](https://nodejs.org/) 22 or later, [npm](https://www.npmjs.com/) 11 or later, and [TypeScript](https://www.typescriptlang.org/) 6.0.3 or later._
 
 <!-- USAGE_END -->
 
@@ -50,7 +69,11 @@ _Requires [Node.js](https://nodejs.org/) 22 or later, [npm](https://www.npmjs.co
 
 <!-- DEPENDENCY_LICENSES_START -->
 
-Run `npm run documentDependencies` after a release to populate this table.
+License data is collected automatically on each release using [license-checker](https://github.com/RSeidelsohn/license-checker-rseidelsohn). The following table lists all production dependencies. These dependencies (including transitive ones) have been checked and confirmed to use BSD-3-Clause or MIT — all permissive, commercially-friendly licenses. Users of the uploaded library are covered by these checks; developers cloning this repository should independently verify development dependencies.
+
+|Dependency|Version|License(s)|Document|
+|:-|:-:|:-|:-|
+|[@dpuse/dpuse-shared](https://github.com/dpuse/dpuse-shared)|0.3.737|MIT|[LICENSE](licenses/downloads/@dpuse/dpuse-shared@0.3.737-LICENSE.txt)|
 
 <!-- DEPENDENCY_LICENSES_END -->
 
@@ -58,7 +81,9 @@ Run `npm run documentDependencies` after a release to populate this table.
 
 <!-- DEPENDENCY_TREE_START -->
 
-Run `npm run documentDependencies` after a release to populate this tree.
+The dependency tree below lists every package in this project — direct and transitive — along with its installed version, release date, and update status. Packages flagged ❗ have a newer version available; ⚠️ indicates a package that hasn't been updated in the last 6 months or longer. Neither flag necessarily indicates a problem: we let new releases stabilise before upgrading, and some packages are simply mature and stable, requiring no active development.
+
+- **[@dpuse/dpuse-shared](https://github.com/dpuse/dpuse-shared)** 0.3.737 — this month: 2026-07-07
 
 <!-- DEPENDENCY_TREE_END -->
 
@@ -66,7 +91,16 @@ Run `npm run documentDependencies` after a release to populate this tree.
 
 <!-- BUNDLE_START -->
 
-Run `npm run build` to populate this section with a Sonda bundle analysis report.
+The Bundle Analysis Report is generated automatically on each release using [Sonda](https://sonda.dev/), which analyses final source maps to reveal the actual effects of tree-shaking and minification rather than relying on pre-build estimates.
+
+_Note: Sonda's Vite reports currently exclude CSS files, since Vite does not generate source maps for CSS._
+
+|Chunk/Module/File|Composition|
+|:------ |:-----------|
+| dist/dpuse-connector-template.es.js | 3.0 kB · brotli 977 B |
+| &nbsp;&nbsp;&nbsp;&nbsp;(unassigned) → [unassigned] | `██████████░░░░░░░░░░` 49.0% |
+| &nbsp;&nbsp;&nbsp;&nbsp;src → index.ts | `███████░░░░░░░░░░░░░` 36.7% |
+| &nbsp;&nbsp;&nbsp;&nbsp;@dpuse/dpuse-shared → dist/dpuse-shared-errors.es.js | `███░░░░░░░░░░░░░░░░░` 14.4% |
 
 <!-- BUNDLE_END -->
 
@@ -76,7 +110,7 @@ Run `npm run build` to populate this section with a Sonda bundle analysis report
 
 ### CodeQL
 
-[CodeQL](https://github.com/dpuse/dpuse-connector-template/security/code-scanning) static analysis runs on every push to `main` and on a weekly schedule, scanning TypeScript, JavaScript, and GitHub Actions workflow files for security vulnerabilities and coding errors.
+[CodeQL](https://github.com/dpuse/dpuse-connector-template/security/code-scanning) static analysis runs on every push to `main` and on a weekly schedule, scanning TypeScript, JavaScript, Rust, and GitHub Actions workflow files for security vulnerabilities and coding errors.
 
 ### SonarCloud
 
