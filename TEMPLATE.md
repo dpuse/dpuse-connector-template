@@ -31,9 +31,14 @@ Then update, by hand, in `config.json`:
 
 And in `package.json`, update `description` and `dependencies` (add whatever `@dpuse/dpuse-tool-*` packages your connector actually needs).
 
-## 3. Pick your action set
+## 3. Delete the actions you don't need
 
-`src/index.ts` and `config.json`'s `actionNames` currently implement the **Source connector** shape (read-only: audit, find, stream, list, preview, retrieve — see `dpuse-connector-dropbox` as the closest real reference). If you're building a **database connector** instead, swap in `createObject`, `dropObject`, `getRecord`, `upsertRecords`, `removeRecords` in place of `auditObjectContent`/`getReadableStream` (see `dpuse-connector-dexie-js` for the reference shape), and update `actionNames` in `config.json` to match.
+`src/index.ts` stubs all 14 actions from the `ConnectorInterface` contract, and `config.json`'s `actionNames` lists all 14 to match. Most connectors only need a subset:
+
+- A **source connector** (read-only) typically implements `abortOperation`, `auditObjectContent`, `findObject`, `getReadableStream`, `listNodes`, `previewObject`, `retrieveRecords` — see `dpuse-connector-dropbox` for the closest real reference.
+- A **database connector** typically implements `abortOperation`, `createObject`, `dropObject`, `findObject`, `getRecord`, `listNodes`, `previewObject`, `upsertRecords`, `removeRecords`, `retrieveRecords` — see `dpuse-connector-dexie-js` for the closest real reference.
+
+Delete whichever methods you don't need from `src/index.ts`, remove the corresponding entries from `config.json`'s `actionNames`, and implement the ones you keep. `describeConnection` and `retrieveChunks` have no reference implementation among the sibling connectors — their stubs are a best-effort guess at the right shape, not a proven pattern.
 
 Update `tests/index.test.ts`'s expected `config.id` to match your new id.
 
