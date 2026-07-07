@@ -97,10 +97,10 @@ _Note: Sonda's Vite reports currently exclude CSS files, since Vite does not gen
 
 |Chunk/Module/File|Composition|
 |:------ |:-----------|
-| dist/dpuse-connector-template.es.js | 3.0 kB · brotli 977 B |
-| &nbsp;&nbsp;&nbsp;&nbsp;(unassigned) → [unassigned] | `██████████░░░░░░░░░░` 49.0% |
-| &nbsp;&nbsp;&nbsp;&nbsp;src → index.ts | `███████░░░░░░░░░░░░░` 36.7% |
-| &nbsp;&nbsp;&nbsp;&nbsp;@dpuse/dpuse-shared → dist/dpuse-shared-errors.es.js | `███░░░░░░░░░░░░░░░░░` 14.4% |
+| dist/dpuse-connector-template.es.js | 4.8 kB · brotli 1.1 kB |
+| &nbsp;&nbsp;&nbsp;&nbsp;src → index.ts | `███████████░░░░░░░░░` 56.7% |
+| &nbsp;&nbsp;&nbsp;&nbsp;(unassigned) → [unassigned] | `███████░░░░░░░░░░░░░` 34.4% |
+| &nbsp;&nbsp;&nbsp;&nbsp;@dpuse/dpuse-shared → dist/dpuse-shared-errors.es.js | `██░░░░░░░░░░░░░░░░░░` 8.9% |
 
 <!-- BUNDLE_END -->
 

@@ -8,7 +8,22 @@
             "Template scaffold for building new DPUse connectors. Replace this description, and the sample action stubs in src/index.ts, with your connector's actual behaviour."
         ]
     },
-    "actionNames": ["abortOperation", "auditObjectContent", "findObject", "getReadableStream", "listNodes", "previewObject", "retrieveRecords"],
+    "actionNames": [
+        "abortOperation",
+        "auditObjectContent",
+        "createObject",
+        "describeConnection",
+        "dropObject",
+        "findObject",
+        "getReadableStream",
+        "getRecord",
+        "listNodes",
+        "previewObject",
+        "removeRecords",
+        "retrieveChunks",
+        "retrieveRecords",
+        "upsertRecords"
+    ],
     "category": null,
     "categoryId": "fileStore",
     "firstCreatedAt": null,
