@@ -1,41 +1,43 @@
 # Using this template
 
-This repo is a scaffold, not a working connector. Delete this file once you're done instantiating it.
+This repo is registered as a GitHub template repository (Settings → Template repository). It ships as a valid, buildable, passing-lint connector — every file works as-is under the name `dpuse-connector-template`. Delete this file once you're done renaming it into your new connector.
 
-## 1. Pick your values
-
-| Token | Example | Where it's used |
-|---|---|---|
-| `__CONNECTOR_ID__` | `dpuse-connector-foo` | repo name, package name, config.json id, build output filenames |
-| `__CONNECTOR_LABEL__` | `Foo` | config.json label, README title |
-| `__CONNECTOR_DESCRIPTION__` | `Provides access to Foo for ...` | package.json + config.json description, README intro |
-| `__CATEGORY_ID__` | `application` \| `fileStore` \| `database` | config.json categoryId |
-| `__AUTH_METHOD_ID__` | `none` \| `oAuth2` \| ... | config.json implementations.default.authMethodId |
-| `__VENDOR_ACCOUNT_URL__` | `https://foo.com/login` | config.json |
-| `__VENDOR_DOCUMENTATION_URL__` | `https://foo.com/docs` | config.json |
-| `__VENDOR_HOME_URL__` | `https://foo.com/` | config.json |
-| `__ICON_SVG__` / `__ICON_DARK_SVG__` | inline `<svg>...</svg>` | config.json light/dark icon |
-
-## 2. Replace tokens
-
-From the repo root:
+## 1. Generate a new repo from this template
 
 ```bash
-grep -rl '__CONNECTOR_ID__\|__CONNECTOR_LABEL__\|__CONNECTOR_DESCRIPTION__\|__CATEGORY_ID__\|__AUTH_METHOD_ID__\|__VENDOR_ACCOUNT_URL__\|__VENDOR_DOCUMENTATION_URL__\|__VENDOR_HOME_URL__' --exclude-dir=node_modules --exclude-dir=.git -Z | xargs -0 sed -i '' \
-  -e 's/__CONNECTOR_ID__/dpuse-connector-foo/g' \
-  -e 's/__CONNECTOR_LABEL__/Foo/g' \
-  -e 's/__CONNECTOR_DESCRIPTION__/Provides access to Foo./g' \
-  -e 's/__CATEGORY_ID__/application/g' \
-  -e 's/__AUTH_METHOD_ID__/none/g'
+gh repo create dpuse/dpuse-connector-<name> --public --template dpuse/dpuse-connector-template
+git clone https://github.com/dpuse/dpuse-connector-<name>.git
+cd dpuse-connector-<name>
 ```
 
-`__VENDOR_ACCOUNT_URL__`, `__VENDOR_DOCUMENTATION_URL__`, `__VENDOR_HOME_URL__`, `__ICON_SVG__`, `__ICON_DARK_SVG__` are best hand-edited directly in `config.json` since URLs contain `/` and SVGs contain characters that don't sed cleanly.
+(Or use the green "Use this template" button on the GitHub repo page.)
+
+## 2. Rename `dpuse-connector-template` to your connector's id
+
+The literal string `dpuse-connector-template` appears in `package.json` (name, bugs.url, repository.url, module/exports filenames), `config.json` (id), `README.md`, and `SECURITY.md`. Replace it everywhere:
+
+```bash
+grep -rl 'dpuse-connector-template' --exclude-dir=node_modules --exclude-dir=.git -Z . | xargs -0 sed -i '' 's/dpuse-connector-template/dpuse-connector-<name>/g'
+```
+
+Then update, by hand, in `config.json`:
+
+- `label.en` — display name (currently `"Connector Template"`)
+- `description.en` — currently the placeholder template blurb; write the real one
+- `categoryId` — one of `"application"`, `"curatedDataset"`, `"database"`, `"fileStore"` (currently `"fileStore"`)
+- `implementations.default.authMethodId` — one of `"apiKey"`, `"disabled"`, `"oAuth2"`, `"none"` (currently `"none"`)
+- `vendorAccountURL` / `vendorDocumentationURL` / `vendorHomeURL` — currently `null`; fill in if there's a third-party vendor
+- `icon` / `iconDark` — currently a generic placeholder glyph; replace with the vendor's real icon
+
+And in `package.json`, update `description` and `dependencies` (add whatever `@dpuse/dpuse-tool-*` packages your connector actually needs).
 
 ## 3. Pick your action set
 
 `src/index.ts` and `config.json`'s `actionNames` currently implement the **Source connector** shape (read-only: audit, find, stream, list, preview, retrieve — see `dpuse-connector-dropbox` as the closest real reference). If you're building a **database connector** instead, swap in `createObject`, `dropObject`, `getRecord`, `upsertRecords`, `removeRecords` in place of `auditObjectContent`/`getReadableStream` (see `dpuse-connector-dexie-js` for the reference shape), and update `actionNames` in `config.json` to match.
 
-## 4. Rename the repo directory and finish setup
+Update `tests/index.test.ts`'s expected `config.id` to match your new id.
+
+## 4. Verify and finish
 
 ```bash
 npm install
@@ -44,10 +46,10 @@ npm run lint
 npm test
 ```
 
-Then update `bugs.url` / `repository.url` in `package.json` if you cloned this into a differently-named GitHub repo, and delete this file.
+Then delete this file.
 
 ## What's intentionally left out
 
 - **No Rust/WASM.** One sibling connector (`dpuse-connector-file-store-emulator`) has an unfinished Rust/wasm-bindgen experiment; it isn't a pattern worth propagating.
-- **No domain fixture data or connector-specific dependencies** — add whatever tool packages (`@dpuse/dpuse-tool-*`) your connector actually needs.
+- **No domain fixture data or connector-specific dependencies** — add whatever tool packages your connector actually needs.
 - **No `scripts/` contents** — `tsconfig.scripts.json` is wired up for one-off maintenance scripts if you need them later, but ships empty.

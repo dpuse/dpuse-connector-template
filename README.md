@@ -1,14 +1,14 @@
-# DPUse __CONNECTOR_LABEL__ Connector
+# DPUse Connector Template Connector
 
 <!-- OPENING_START -->
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
-[![DPUse version](https://img.shields.io/github/v/release/dpuse/__CONNECTOR_ID__?color=f6821f&label=DPUse)](https://github.com/dpuse/__CONNECTOR_ID__/releases/latest)
-[![CI](https://github.com/dpuse/__CONNECTOR_ID__/actions/workflows/ci.yml/badge.svg)](https://github.com/dpuse/__CONNECTOR_ID__/actions/workflows/ci.yml)
-[![CodeQL](https://github.com/dpuse/__CONNECTOR_ID__/actions/workflows/codeql.yml/badge.svg)](https://github.com/dpuse/__CONNECTOR_ID__/actions/workflows/codeql.yml)
-[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=dpuse___CONNECTOR_ID__&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=dpuse___CONNECTOR_ID__)
+[![DPUse version](https://img.shields.io/github/v/release/dpuse/dpuse-connector-template?color=f6821f&label=DPUse)](https://github.com/dpuse/dpuse-connector-template/releases/latest)
+[![CI](https://github.com/dpuse/dpuse-connector-template/actions/workflows/ci.yml/badge.svg)](https://github.com/dpuse/dpuse-connector-template/actions/workflows/ci.yml)
+[![CodeQL](https://github.com/dpuse/dpuse-connector-template/actions/workflows/codeql.yml/badge.svg)](https://github.com/dpuse/dpuse-connector-template/actions/workflows/codeql.yml)
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=dpuse_dpuse-connector-template&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=dpuse_dpuse-connector-template)
 
-[Documentation](https://www.dpuse.app) · [Report a Vulnerability](https://github.com/dpuse/__CONNECTOR_ID__/security/advisories/new) · [Open an Issue](https://github.com/dpuse/__CONNECTOR_ID__/issues)
+[Documentation](https://www.dpuse.app) · [Report a Vulnerability](https://github.com/dpuse/dpuse-connector-template/security/advisories/new) · [Open an Issue](https://github.com/dpuse/dpuse-connector-template/issues)
 
 ## About DPUse
 
@@ -16,7 +16,7 @@ DPUse (Data Positioning & Use) is an in-browser application that positions your 
 
 ## Introduction
 
-__CONNECTOR_DESCRIPTION__
+Template scaffold for building new DPUse connectors. Replace this description, and the sample action stubs in src/index.ts, with your connector's actual behaviour.
 
 <!-- OPENING_END -->
 
@@ -37,8 +37,8 @@ This connector is automatically uploaded to the DPUse Engine cloud once released
 You may view or clone this repository for your own purposes, such as building a new, similar connector, though there is currently no process to accept third-party connectors into DPUse at this stage. Cloned or forked code is unsupported and isn't guaranteed to remain compatible with the DPUse Engine as it evolves.
 
 ```bash
-git clone https://github.com/dpuse/__CONNECTOR_ID__.git
-cd __CONNECTOR_ID__
+git clone https://github.com/dpuse/dpuse-connector-template.git
+cd dpuse-connector-template
 npm install
 ```
 
@@ -76,11 +76,11 @@ Run `npm run build` to populate this section with a Sonda bundle analysis report
 
 ### CodeQL
 
-[CodeQL](https://github.com/dpuse/__CONNECTOR_ID__/security/code-scanning) static analysis runs on every push to `main` and on a weekly schedule, scanning TypeScript, JavaScript, and GitHub Actions workflow files for security vulnerabilities and coding errors.
+[CodeQL](https://github.com/dpuse/dpuse-connector-template/security/code-scanning) static analysis runs on every push to `main` and on a weekly schedule, scanning TypeScript, JavaScript, and GitHub Actions workflow files for security vulnerabilities and coding errors.
 
 ### SonarCloud
 
-[SonarCloud](https://sonarcloud.io/summary/new_code?id=dpuse___CONNECTOR_ID__) performs continuous code quality and security analysis on every push, detecting bugs, code smells, and security vulnerabilities in the TypeScript source.
+[SonarCloud](https://sonarcloud.io/summary/new_code?id=dpuse_dpuse-connector-template) performs continuous code quality and security analysis on every push, detecting bugs, code smells, and security vulnerabilities in the TypeScript source.
 
 ### Vulnerability Scanning
 
@@ -95,19 +95,19 @@ Two complementary tools continuously monitor dependencies for known vulnerabilit
 
 ### Reporting Vulnerabilities
 
-Please do not open public GitHub issues for security vulnerabilities. Use [GitHub private vulnerability reporting](https://github.com/dpuse/__CONNECTOR_ID__/security/advisories/new) instead. See [SECURITY.md](./SECURITY.md) for the full disclosure policy, contact details, and expected response times.
+Please do not open public GitHub issues for security vulnerabilities. Use [GitHub private vulnerability reporting](https://github.com/dpuse/dpuse-connector-template/security/advisories/new) instead. See [SECURITY.md](./SECURITY.md) for the full disclosure policy, contact details, and expected response times.
 
 ### OpenSSF 🚧
 
-[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/dpuse/__CONNECTOR_ID__/badge)](https://scorecard.dev/viewer/?uri=github.com/dpuse/__CONNECTOR_ID__)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/dpuse/dpuse-connector-template/badge)](https://scorecard.dev/viewer/?uri=github.com/dpuse/dpuse-connector-template)
 
-This project is working towards the [OpenSSF Best Practices](https://www.bestpractices.dev) Passing badge, a self-certification covering security policy, vulnerability reporting, build processes, code quality, and more. Currently the [OpenSSF Scorecard](https://scorecard.dev/viewer/?uri=github.com/dpuse/__CONNECTOR_ID__) provides an independent automated assessment of the project's security practices and is an ongoing area of improvement.
+This project is working towards the [OpenSSF Best Practices](https://www.bestpractices.dev) Passing badge, a self-certification covering security policy, vulnerability reporting, build processes, code quality, and more. Currently the [OpenSSF Scorecard](https://scorecard.dev/viewer/?uri=github.com/dpuse/dpuse-connector-template) provides an independent automated assessment of the project's security practices and is an ongoing area of improvement.
 
 ## Contributing
 
 This repository is maintained solely by its owner and does not, at present, accept external contributions into the canonical repo. Its source is published openly under the MIT License — every DPUse project is fully open source except DPUse Engine, which remains closed and proprietary.
 
-For security vulnerabilities, see [Reporting Vulnerabilities](#reporting-vulnerabilities). For bugs, inconsistencies, or other feedback, [open a GitHub issue](https://github.com/dpuse/__CONNECTOR_ID__/issues) — feedback is read, but responses and fixes are at the maintainer's discretion.
+For security vulnerabilities, see [Reporting Vulnerabilities](#reporting-vulnerabilities). For bugs, inconsistencies, or other feedback, [open a GitHub issue](https://github.com/dpuse/dpuse-connector-template/issues) — feedback is read, but responses and fixes are at the maintainer's discretion.
 
 ## License
 

@@ -1,25 +1,25 @@
 {
-    "name": "@dpuse/__CONNECTOR_ID__",
+    "name": "@dpuse/dpuse-connector-template",
     "version": "0.0.1",
     "private": false,
-    "description": "__CONNECTOR_DESCRIPTION__",
+    "description": "Template scaffold for building new DPUse connectors.",
     "license": "MIT",
     "author": "Jonathan Terrell <terrell.jm@gmail.com>",
     "type": "module",
     "sideEffects": false,
     "homepage": "https://www.dpuse.app",
     "bugs": {
-        "url": "https://github.com/dpuse/__CONNECTOR_ID__/issues"
+        "url": "https://github.com/dpuse/dpuse-connector-template/issues"
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/dpuse/__CONNECTOR_ID__.git"
+        "url": "git+https://github.com/dpuse/dpuse-connector-template.git"
     },
-    "module": "./dist/__CONNECTOR_ID__.es.js",
+    "module": "./dist/dpuse-connector-template.es.js",
     "types": "./dist/types/src/index.d.ts",
     "exports": {
         ".": {
-            "import": "./dist/__CONNECTOR_ID__.es.js",
+            "import": "./dist/dpuse-connector-template.es.js",
             "types": "./dist/types/src/index.d.ts"
         }
     },

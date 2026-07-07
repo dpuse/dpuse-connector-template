@@ -4,7 +4,7 @@ import { Connector } from '@/index';
 describe('Connector', () => {
     it('constructs with the static config and no active operation', () => {
         const connector = new Connector({} as never, []);
-        expect(connector.config.id).toBe('__CONNECTOR_ID__');
+        expect(connector.config.id).toBe('dpuse-connector-template');
         expect(connector.abortController).toBeUndefined();
     });
 

@@ -1,31 +1,31 @@
 {
-    "id": "__CONNECTOR_ID__",
+    "id": "dpuse-connector-template",
     "label": {
-        "en": "__CONNECTOR_LABEL__"
+        "en": "Connector Template"
     },
     "description": {
         "en": [
-            "__CONNECTOR_DESCRIPTION__"
+            "Template scaffold for building new DPUse connectors. Replace this description, and the sample action stubs in src/index.ts, with your connector's actual behaviour."
         ]
     },
     "actionNames": ["abortOperation", "auditObjectContent", "findObject", "getReadableStream", "listNodes", "previewObject", "retrieveRecords"],
     "category": null,
-    "categoryId": "__CATEGORY_ID__",
+    "categoryId": "fileStore",
     "firstCreatedAt": null,
     "implementations": {
         "default": {
-            "authMethodId": "__AUTH_METHOD_ID__",
+            "authMethodId": "none",
             "maxConnectionCount": 1
         }
     },
-    "icon": "__ICON_SVG__",
-    "iconDark": "__ICON_DARK_SVG__",
+    "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M12 2a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v2h2v4h-2v2a2 2 0 0 1-2 2h-2v2a2 2 0 0 1-4 0v-2H8a2 2 0 0 1-2-2v-2H4v-4h2V8a2 2 0 0 1 2-2h2V4a2 2 0 0 1 2-2z\" fill=\"#6B7280\"/></svg>",
+    "iconDark": "<svg viewBox=\"0 0 24 24\"><path d=\"M12 2a2 2 0 0 1 2 2v2h2a2 2 0 0 1 2 2v2h2v4h-2v2a2 2 0 0 1-2 2h-2v2a2 2 0 0 1-4 0v-2H8a2 2 0 0 1-2-2v-2H4v-4h2V8a2 2 0 0 1 2-2h2V4a2 2 0 0 1 2-2z\" fill=\"#D1D5DB\"/></svg>",
     "lastUpdatedAt": null,
     "status": null,
     "statusId": "alpha",
     "typeId": "connector",
-    "vendorAccountURL": "__VENDOR_ACCOUNT_URL__",
-    "vendorDocumentationURL": "__VENDOR_DOCUMENTATION_URL__",
-    "vendorHomeURL": "__VENDOR_HOME_URL__",
+    "vendorAccountURL": null,
+    "vendorDocumentationURL": null,
+    "vendorHomeURL": null,
     "version": "0.0.1"
 }
