@@ -1,0 +1,31 @@
+{
+    "id": "__CONNECTOR_ID__",
+    "label": {
+        "en": "__CONNECTOR_LABEL__"
+    },
+    "description": {
+        "en": [
+            "__CONNECTOR_DESCRIPTION__"
+        ]
+    },
+    "actionNames": ["abortOperation", "auditObjectContent", "findObject", "getReadableStream", "listNodes", "previewObject", "retrieveRecords"],
+    "category": null,
+    "categoryId": "__CATEGORY_ID__",
+    "firstCreatedAt": null,
+    "implementations": {
+        "default": {
+            "authMethodId": "__AUTH_METHOD_ID__",
+            "maxConnectionCount": 1
+        }
+    },
+    "icon": "__ICON_SVG__",
+    "iconDark": "__ICON_DARK_SVG__",
+    "lastUpdatedAt": null,
+    "status": null,
+    "statusId": "alpha",
+    "typeId": "connector",
+    "vendorAccountURL": "__VENDOR_ACCOUNT_URL__",
+    "vendorDocumentationURL": "__VENDOR_DOCUMENTATION_URL__",
+    "vendorHomeURL": "__VENDOR_HOME_URL__",
+    "version": "0.0.1"
+}
