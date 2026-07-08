@@ -1,5 +1,7 @@
 # DPUse Connector Template
 
+> **Using this as a template?** Read [TEMPLATE.md](./TEMPLATE.md) first, then delete this note along with that file once you're done.
+
 <!-- OPENING_START -->
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](./LICENSE)
@@ -26,24 +28,24 @@ Template scaffold for building new DPUse connectors. Replace this description, a
 
 Connectors conform to a unified interface contract by implementing a specific subset of standard actions. These standardised actions allow the DPUse application to interact with any underlying data source in the same way, enabling Connectors to be built independently and loaded dynamically at runtime.
 
-This connector is a Source connector that supports only read actions. Connectors can also function as a Destination (write-only) or Bidirectional (read/write), depending on the actions they support. The table below lists all connector actions and highlights those supported by this connector.
+This connector is a Bidirectional connector that supports both read and write actions. Connectors can also function as a Source (read-only) or Destination (write-only), depending on the actions they support. The table below lists all connector actions and highlights those supported by this connector.
 
-|Action|Supported|
-|:----|:-------:|
-| Abort Operation | ✓ |
-| Audit Object Content | ✓ |
-| Create Object |  |
-| Describe Connection |  |
-| Drop Object |  |
-| Find Object | ✓ |
-| Get Readable Stream | ✓ |
-| Get Record |  |
-| List Nodes | ✓ |
-| Preview Object | ✓ |
-| Remove Records |  |
-| Retrieve Chunks |  |
-| Retrieve Records | ✓ |
-| Upsert Records |  |
+| Action               | Supported |
+| :------------------- | :-------: |
+| Abort Operation      |     ✓     |
+| Audit Object Content |     ✓     |
+| Create Object        |     ✓     |
+| Describe Connection  |     ✓     |
+| Drop Object          |     ✓     |
+| Find Object          |     ✓     |
+| Get Readable Stream  |     ✓     |
+| Get Record           |     ✓     |
+| List Nodes           |     ✓     |
+| Preview Object       |     ✓     |
+| Remove Records       |     ✓     |
+| Retrieve Chunks      |     ✓     |
+| Retrieve Records     |     ✓     |
+| Upsert Records       |     ✓     |
 
 <!-- CONNECTOR_ACTIONS_END -->
 
@@ -61,7 +63,7 @@ cd dpuse-connector-template
 npm install
 ```
 
-_Requires [Node.js](https://nodejs.org/) 22 or later, [npm](https://www.npmjs.com/) 11 or later, and [TypeScript](https://www.typescriptlang.org/) 6.0.3 or later._
+_Requires [Node.js](https://nodejs.org/) 23.11 or later, [npm](https://www.npmjs.com/) 11 or later, and [TypeScript](https://www.typescriptlang.org/) 6.0.3 or later._
 
 <!-- USAGE_END -->
 
@@ -71,9 +73,9 @@ _Requires [Node.js](https://nodejs.org/) 22 or later, [npm](https://www.npmjs.co
 
 License data is collected automatically on each release using [license-checker](https://github.com/RSeidelsohn/license-checker-rseidelsohn). The following table lists all production dependencies. These dependencies (including transitive ones) have been checked and confirmed to use BSD-3-Clause or MIT — all permissive, commercially-friendly licenses. Users of the uploaded library are covered by these checks; developers cloning this repository should independently verify development dependencies.
 
-|Dependency|Version|License(s)|Document|
-|:-|:-:|:-|:-|
-|[@dpuse/dpuse-shared](https://github.com/dpuse/dpuse-shared)|0.3.737|MIT|[LICENSE](licenses/downloads/@dpuse/dpuse-shared@0.3.737-LICENSE.txt)|
+| Dependency                                                   | Version | License(s) | Document                                                              |
+| :----------------------------------------------------------- | :-----: | :--------- | :-------------------------------------------------------------------- |
+| [@dpuse/dpuse-shared](https://github.com/dpuse/dpuse-shared) | 0.3.737 | MIT        | [LICENSE](licenses/downloads/@dpuse/dpuse-shared@0.3.737-LICENSE.txt) |
 
 <!-- DEPENDENCY_LICENSES_END -->
 
@@ -95,12 +97,12 @@ The Bundle Analysis Report is generated automatically on each release using [Son
 
 _Note: Sonda's Vite reports currently exclude CSS files, since Vite does not generate source maps for CSS._
 
-|Chunk/Module/File|Composition|
-|:------ |:-----------|
-| dist/dpuse-connector-template.es.js | 4.8 kB · brotli 1.1 kB |
-| &nbsp;&nbsp;&nbsp;&nbsp;src → index.ts | `███████████░░░░░░░░░` 56.7% |
-| &nbsp;&nbsp;&nbsp;&nbsp;(unassigned) → [unassigned] | `███████░░░░░░░░░░░░░` 34.4% |
-| &nbsp;&nbsp;&nbsp;&nbsp;@dpuse/dpuse-shared → dist/dpuse-shared-errors.es.js | `██░░░░░░░░░░░░░░░░░░` 8.9% |
+| Chunk/Module/File                                                            | Composition                  |
+| :--------------------------------------------------------------------------- | :--------------------------- |
+| dist/dpuse-connector-template.es.js                                          | 5.5 kB · brotli 1.1 kB       |
+| &nbsp;&nbsp;&nbsp;&nbsp;src → index.ts                                       | `██████████░░░░░░░░░░` 49.6% |
+| &nbsp;&nbsp;&nbsp;&nbsp;(unassigned) → [unassigned]                          | `█████████░░░░░░░░░░░` 42.6% |
+| &nbsp;&nbsp;&nbsp;&nbsp;@dpuse/dpuse-shared → dist/dpuse-shared-errors.es.js | `██░░░░░░░░░░░░░░░░░░` 7.8%  |
 
 <!-- BUNDLE_END -->
 
