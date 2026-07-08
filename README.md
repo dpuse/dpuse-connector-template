@@ -1,5 +1,6 @@
 # DPUse Connector Template
 
+> [!IMPORTANT]
 > **Using this as a template?** Read [TEMPLATE.md](./TEMPLATE.md) first, then delete this note along with that file once you're done.
 
 <!-- OPENING_START -->

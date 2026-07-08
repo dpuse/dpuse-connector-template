@@ -51,7 +51,7 @@ npm run lint
 npm test
 ```
 
-Then delete this file.
+Then delete this file, along with the "Using this as a template?" note at the top of `README.md`.
 
 ## What's intentionally left out
 
