@@ -1,6 +1,6 @@
 {
     "name": "@dpuse/dpuse-connector-template",
-    "version": "0.0.16",
+    "version": "0.0.17",
     "private": false,
     "description": "Template scaffold for building new DPUse connectors.",
     "license": "MIT",
@@ -64,7 +64,7 @@
         "@dpuse/dpuse-shared": "^0.3.869"
     },
     "devDependencies": {
-        "@dpuse/dpuse-development": "^0.3.816",
+        "@dpuse/dpuse-development": "^0.3.817",
         "@dpuse/eslint-config-dpuse": "^1.0.124",
         "@types/node": "^26.6.4",
         "eslint": "^10.11.0",
