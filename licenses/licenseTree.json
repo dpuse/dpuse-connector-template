@@ -1,5 +1,5 @@
 {
-  "version": "1.0.001",
+  "version": "1.0.100",
   "name": "@dpuse/dpuse-connector-template",
   "dependencies": {
     "@dpuse/dpuse-development": {
