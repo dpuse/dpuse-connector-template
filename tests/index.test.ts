@@ -1,5 +1,5 @@
-import { describe, expect, it } from 'vitest';
 import { Connector } from '@/index';
+import { describe, expect, it } from 'vitest';
 
 describe('Connector', () => {
     it('constructs with the static config and no active operation', () => {

@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "0.14.0",
-    "generatedAt": "2026-10-02T15:07:26.873Z",
+    "generatedAt": "2026-10-03T14:50:41.595Z",
     "integration": "vite",
     "sources": false,
     "gzip": true,
@@ -63,7 +63,7 @@
       "name": "src/index.ts",
       "type": "script",
       "format": "esm",
-      "uncompressed": 3820
+      "uncompressed": 3832
     },
     {
       "kind": "chunk",
