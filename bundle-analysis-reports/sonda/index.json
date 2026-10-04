@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "0.14.0",
-    "generatedAt": "2026-10-03T15:05:50.828Z",
+    "generatedAt": "2026-10-04T09:44:33.271Z",
     "integration": "vite",
     "sources": false,
     "gzip": true,
@@ -21,8 +21,8 @@
       "name": "[unassigned]",
       "type": "other",
       "format": "other",
-      "uncompressed": 3499,
-      "gzip": 815,
+      "uncompressed": 3501,
+      "gzip": 816,
       "brotli": 0,
       "parent": "dist/dpuse-connector-template.es.js"
     },
@@ -31,14 +31,14 @@
       "name": "config.json",
       "type": "script",
       "format": "esm",
-      "uncompressed": 2438
+      "uncompressed": 2440
     },
     {
       "kind": "asset",
       "name": "dist/dpuse-connector-template.es.js",
       "type": "script",
-      "uncompressed": 14600,
-      "gzip": 3690,
+      "uncompressed": 14602,
+      "gzip": 3691,
       "brotli": 0
     },
     {
@@ -54,7 +54,7 @@
       "type": "script",
       "format": "esm",
       "uncompressed": 8296,
-      "gzip": 2416,
+      "gzip": 2415,
       "brotli": 0,
       "parent": "dist/dpuse-connector-template.es.js"
     },

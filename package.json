@@ -1,6 +1,6 @@
 {
     "name": "@dpuse/dpuse-connector-template",
-    "version": "1.0.102",
+    "version": "1.0.202",
     "private": false,
     "description": "Template scaffold for building new DPUse connectors.",
     "license": "MIT",
