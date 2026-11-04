@@ -19,8 +19,8 @@ import type {
     ListNodesOptions,
     ListNodesResult,
     ParsingRecord,
-    PreviewConfig,
     PreviewObjectOptions,
+    PreviewObjectResult,
     RecordRetrievalTypeId,
     RemoveRecordsOptions,
     RetrieveChunksOptions,
@@ -64,7 +64,7 @@ export class Connector implements ConnectorInterface {
     }
 
     // Audit object content — see dpuse-connector-dropbox / dpuse-connector-file-store-emulator for a fuller reference
-    async auditObjectContent(_options: AuditObjectContentOptions, _chunk: (rowCount: number) => void): Promise<AuditObjectContentResult> {
+    async auditObjectContent(_options: AuditObjectContentOptions, _chunk: (recordCount: number, byteCount: number) => void): Promise<AuditObjectContentResult> {
         this.abortController = new AbortController();
 
         try {
@@ -178,12 +178,12 @@ export class Connector implements ConnectorInterface {
     }
 
     // Preview the contents of the object node with the specified path — see dpuse-connector-dropbox for a fuller reference
-    async previewObject(_options: PreviewObjectOptions): Promise<PreviewConfig> {
+    async previewObject(_options: PreviewObjectOptions): Promise<PreviewObjectResult> {
         this.abortController = new AbortController();
 
         try {
             await Promise.resolve();
-            return {} as PreviewConfig;
+            return {} as PreviewObjectResult;
         } catch (error) {
             throw normalizeToError(error);
         } finally {
