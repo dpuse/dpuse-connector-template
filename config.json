@@ -4,24 +4,9 @@
         "en": "Connector Template"
     },
     "description": {
-        "en": "Template scaffold for building new DPUse connectors. Replace this description, and the sample action stubs in src/index.ts, with your connector's actual behaviour."
+        "en": "Template scaffold for building new DPUse connectors. Replace this description with your connector's actual behaviour, and add its actions to src/index.ts."
     },
-    "actionNames": [
-        "abortOperation",
-        "auditObjectContent",
-        "createObject",
-        "describeConnection",
-        "dropObject",
-        "findObject",
-        "getReadableStream",
-        "getRecord",
-        "listNodes",
-        "previewObject",
-        "removeRecords",
-        "retrieveChunks",
-        "retrieveRecords",
-        "upsertRecords"
-    ],
+    "actionNames": [],
     "category": null,
     "categoryId": "fileStore",
     "firstCreatedAt": null,
@@ -39,9 +24,9 @@
     "statusId": "alpha",
     "typeId": "connector",
     "usage": null,
-    "usageId": "bidirectional",
+    "usageId": "unknown",
     "vendorAccountURL": null,
     "vendorDocumentationURL": null,
     "vendorHomeURL": null,
-    "version": "1.0.214"
+    "version": "1.0.215"
 }

@@ -31,16 +31,21 @@ Then update, by hand, in `config.json`:
 
 And in `package.json`, update `description` and `dependencies` (add whatever `@dpuse/dpuse-tool-*` packages your connector actually needs).
 
-## 3. Delete the actions you don't need
+## 3. Add the actions your connector implements
 
-`src/index.ts` stubs all 14 actions from the `ConnectorInterface` contract, and `config.json`'s `actionNames` lists all 14 to match. Most connectors only need a subset:
+`src/index.ts` starts with no actions, and `config.json`'s `actionNames` is empty to match, so the app offers nothing
+until an action works. Add each action as you implement it, and list it in `actionNames`. Never list an action whose
+body is a placeholder: the app reads the list to decide what to offer.
 
-- A **source connector** (read-only) typically implements `abortOperation`, `auditObjectContent`, `findObject`, `getReadableStream`, `listNodes`, `previewObject`, `retrieveRecords` — see `dpuse-connector-dropbox` for the closest real reference.
-- A **database connector** typically implements `abortOperation`, `createObject`, `dropObject`, `findObject`, `getRecord`, `listNodes`, `previewObject`, `upsertRecords`, `removeRecords`, `retrieveRecords` — see `dpuse-connector-dexie-js` for the closest real reference.
+Follow the sibling connector closest to yours:
 
-Delete whichever methods you don't need from `src/index.ts`, remove the corresponding entries from `config.json`'s `actionNames`, and implement the ones you keep. `describeConnection` and `retrieveChunks` have no reference implementation among the sibling connectors — their stubs are a best-effort guess at the right shape, not a proven pattern.
+- A **file store** (its items are files): `dpuse-connector-file-store-emulator`.
+- A **table source** (a database or application whose items are tables): `dpuse-connector-dexie-js`.
+- An **API endpoint**: `dpuse-connector-dbnomics`.
+- A **store** that data views load into: `dpuse-connector-sqlite-wasm`.
 
-Update `tests/index.test.ts`'s expected `config.id` to match your new id.
+`tests/index.test.ts` checks that `config.json` lists exactly the actions the class implements, and that `config.id` is
+the package name without its scope. Extend it as actions are added, following the sibling's tests.
 
 ## 4. Verify and finish
 

@@ -1,7 +1,7 @@
 {
   "metadata": {
     "version": "0.14.0",
-    "generatedAt": "2026-11-10T12:53:33.265Z",
+    "generatedAt": "2026-11-11T17:45:43.104Z",
     "integration": "vite",
     "sources": false,
     "gzip": true,
@@ -21,8 +21,8 @@
       "name": "[unassigned]",
       "type": "other",
       "format": "other",
-      "uncompressed": 1584,
-      "gzip": 201,
+      "uncompressed": 43,
+      "gzip": 51,
       "brotli": 0,
       "parent": "dist/dpuse-connector-template.es.js"
     },
@@ -30,41 +30,24 @@
       "kind": "asset",
       "name": "dist/dpuse-connector-template.es.js",
       "type": "script",
-      "uncompressed": 12919,
-      "gzip": 3134,
+      "uncompressed": 61,
+      "gzip": 81,
       "brotli": 0
     },
     {
       "kind": "filesystem",
-      "name": "node_modules/@dpuse/dpuse-shared/dist/dpuse-shared.es.js",
-      "type": "script",
-      "format": "esm",
-      "uncompressed": 61854
-    },
-    {
-      "kind": "chunk",
-      "name": "node_modules/@dpuse/dpuse-shared/dist/dpuse-shared.es.js",
-      "type": "script",
-      "format": "esm",
-      "uncompressed": 7989,
-      "gzip": 2421,
-      "brotli": 0,
-      "parent": "dist/dpuse-connector-template.es.js"
-    },
-    {
-      "kind": "filesystem",
       "name": "src/index.ts",
       "type": "script",
       "format": "esm",
-      "uncompressed": 4926
+      "uncompressed": 26
     },
     {
       "kind": "chunk",
       "name": "src/index.ts",
       "type": "script",
       "format": "esm",
-      "uncompressed": 3346,
-      "gzip": 513,
+      "uncompressed": 18,
+      "gzip": 30,
       "brotli": 0,
       "parent": "dist/dpuse-connector-template.es.js"
     }
@@ -77,14 +60,7 @@
       "original": null
     }
   ],
-  "dependencies": [
-    {
-      "name": "@dpuse/dpuse-shared",
-      "paths": [
-        "node_modules/@dpuse/dpuse-shared"
-      ]
-    }
-  ],
+  "dependencies": [],
   "issues": [],
   "sourcemaps": []
 }

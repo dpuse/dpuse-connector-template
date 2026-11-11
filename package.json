@@ -1,6 +1,6 @@
 {
     "name": "@dpuse/dpuse-connector-template",
-    "version": "1.0.214",
+    "version": "1.0.215",
     "private": false,
     "description": "Template scaffold for building new DPUse connectors.",
     "license": "MIT",
@@ -61,7 +61,7 @@
         "test": "node -e \"import('@dpuse/dpuse-development').then(m => m.testProject())\""
     },
     "dependencies": {
-        "@dpuse/dpuse-shared": "^1.0.205"
+        "@dpuse/dpuse-shared": "^1.0.212"
     },
     "devDependencies": {
         "@dpuse/dpuse-development": "^1.0.149",
